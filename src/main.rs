@@ -18,6 +18,10 @@ impl Plugin for HelloPlugin {
 
 fn main() {
     App::new()
+        .insert_resource(WindowDescriptor {
+            present_mode: bevy::window::PresentMode::AutoVsync,
+            ..Default::default()
+        })
         .add_plugins(DefaultPlugins)
         .add_plugin(HelloPlugin)
         .run();
